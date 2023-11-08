@@ -1,0 +1,111 @@
+:root {
+  --background-color: #000;
+  --foreground-color: rgb(20, 223, 20);
+  --font-family: 'Ubuntu Mono', monospace;
+  --font-size: 16px;
+  --line-height: 1.5;
+  --border-radius: 4px;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: var(--foreground-color);
+  font-weight: bolder;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 35px;
+}
+
+h5 {
+  font-size: 30px;
+}
+
+h6 {
+  font-size: 25px;
+}
+
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+  content: "#!/bin/bash ";
+  color: #999;
+}
+/* Maybe add lower headings to be different start scripts or maybe add ones like "echo" to P tags */
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #0f6e0d;
+}
+
+p::before {
+  content: "$ ";
+  color: rgb(37, 106, 184);
+}
+
+@keyframes cursor_blink {
+  0%, 100% {opacity:0; }
+  50% { opacity:1; }
+}
+
+p::after {
+  content: '_';
+  opacity: 0;
+  animation: cursor_blink 1s step-start 0s infinite;
+  margin-left: 0.2em;
+}
+
+strong {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+em {
+  font-style: italic;
+}
+
+abbr {
+  border-bottom: 1px dotted #0f0; /* A dotted underline is a common convention for abbreviations */
+  cursor: help; /* Indicates that an element is interactive or has additional information */
+  text-decoration: none; /* Overrides the default underline text decoration */
+}
+
+abbr:hover {
+  color: #3c3; /* Change text color on hover for additional emphasis */
+  text-decoration: underline; /* You can add underline on hover to indicate interactivity */
+}
+
+button {
+  padding: 0.5em 1em;
+  color: var(--background-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Regular Button */
+button.regular {
+  background-color: var(--foreground-color);
+}
