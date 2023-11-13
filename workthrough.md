@@ -59,18 +59,18 @@ Start by styling type. Set a default font style for your framework. Follow these
   - Set the line-height
   - Set the fore ground color 
   - Set the background color
-- [ ] Set a style for the headings h1-6
-  - [ ] Set the sizes of each of these. 
-  - [ ] Set other styles to get a look that you like. Consider these: 
+- [X] Set a style for the headings h1-6
+  - [X] Set the sizes of each of these. 
+  - [X] Set other styles to get a look that you like. Consider these: 
     - margin-top and margin-bottom
     - color 
     - font-weight
     - letter-spacing
 - [ ] Style other text elements 
-  - [ ] strong
-  - [ ] em
+  - [X] strong
+  - [X] em
   - [ ] a
-  - [ ] abbr
+  - [X] abbr
   - [ ] code (this might use a different font - probably a fixed width font)
 - [ ] Controls - form elements
   - [ ] input[text], input[email], input[password]

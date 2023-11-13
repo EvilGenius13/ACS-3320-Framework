@@ -13,7 +13,10 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size);
   line-height: var(--line-height);
+  margin: 20px;
 }
+
+/* REGULAR TAGS */
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1em;
@@ -92,8 +95,30 @@ abbr {
 
 abbr:hover {
   color: #3c3; /* Change text color on hover for additional emphasis */
-  text-decoration: underline; /* You can add underline on hover to indicate interactivity */
 }
+
+code {
+  font-family: 'Inconsolata', monospace;
+  font-size: 0.9em;
+}
+
+a {
+  color:#0f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: #ff0;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: white;
+}
+
+
+/* BUTTONS */
 
 button {
   padding: 0.5em 1em;
@@ -108,4 +133,314 @@ button {
 /* Regular Button */
 button.regular {
   background-color: var(--foreground-color);
+}
+
+/* button.success, button.danger {
+  background-size: 200% 100%;
+  animation: moveGradient 2s linear infinite;
+} */
+
+/* Danger Button */
+button.danger {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #F44336,
+    #F44336 10px,
+    #000000 10px,
+    #000000 20px
+  );
+  color: white;
+}
+
+/* Success Button */
+button.success {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #4CAF50,
+    #4CAF50 10px,
+    #FFEB3B 10px,
+    #FFEB3B 20px
+  );
+}
+
+/* Hover effects for buttons */
+button:hover {
+  box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+}
+
+/* Focus for button */
+button:focus {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Styles for the button text to appear above the pseudo-element */
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* FORMS AND LABELS */
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--foreground-color);
+}
+
+form label span {
+  display: block;
+  margin-bottom: 5px;
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid var(--foreground-color);
+  color: var(--foreground-color);
+  font-family: var(--font-family);
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  background: #000;
+  outline: none;
+  cursor: pointer;
+  box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.5);
+  transition: 0.4s;
+}
+
+input[type="checkbox"]:checked {
+  background: #0f0;
+}
+
+input[type="checkbox"]:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  /* background: #fff; */
+  background-image: url("../images/hman.png");
+  background-size: cover; /* or use a specific size like '20px 20px' */
+  background-position: center;
+  transform: scale(0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  transition: 0.4s;
+}
+
+input[type="checkbox"]:checked:before {
+  left: 20px;
+}
+
+label.control-checkbox {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--foreground-color);
+}
+
+label.control-checkbox input {
+  display: none;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #000; /* Dark background */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 255, 0, 0.5); /* Greenish glow */
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  margin-right: 20px; /* Spacing between menu items */
+}
+
+.navbar a {
+  color: rgb(20, 223, 20); /* Electric green color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff0; /* Change color on hover */
+}
+
+.title {
+  font-size: 1.5em; /* Larger font size for the title */
+  margin: 0; /* Remove default margin */
+}
+
+/* CARDS */
+
+.card {
+  background-color: #111; /* Dark background */
+  color: #0f0; /* Text color */
+  border: 1px solid #0f0; /* Border color */
+  border-radius: var(--border-radius);
+  overflow: hidden; /* Keeps everything inside the card */
+  box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3); /* Shadow for depth */
+  margin: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 255, 0, 0.5); /* Increased shadow on hover */
+}
+
+.card-image {
+  width: 100%; /* Full width of the card */
+  display: block;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  margin-top: 0;
+  color: #fff; /* White color for the title */
+}
+
+.card-text {
+  color: #ccc; /* Lighter text color for contrast */
+  margin-bottom: 15px;
+}
+
+/* Terminal Card Specific Styles */
+.terminal-card .card-header {
+  position: relative;
+  background-color: #222;
+  color: #0f0;
+  padding: 10px 15px;
+  font-family: 'Ubuntu Mono', monospace;
+  border-bottom: 1px solid #333;
+}
+
+.terminal-card .card-content {
+  padding: 15px;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.terminal-card .card-title {
+  color: #fff;
+}
+
+.terminal-card .card-text {
+  color: #ccc;
+}
+
+/* Terminal Buttons Common Style */
+.terminal-card .card-header .terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  margin-left: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual Button Colors */
+.terminal-card .card-header .close-btn {
+  background-color: #ff605c;
+}
+
+.terminal-card .card-header .minimize-btn {
+  background-color: #ffbd44;
+  right: 35px; /* Position adjustment */
+}
+
+.terminal-card .card-header .maximize-btn {
+  background-color: #00ca4e;
+  right: 55px; /* Position adjustment */
+}
+
+/* Hover effect for Terminal Card */
+.terminal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 255, 0, 0.5);
+}
+
+
+/* Custom CSS for the page layout */
+
+#headings, #type, #buttons, #links, #forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#headings h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+section {
+  border-bottom: #0f0 solid 1px;
+}
+
+
+#code-block {
+  display: flex;
+  flex-direction: column;
+}
+
+#cards {
+  width: 400px;
+}
+
+#regular::before {
+  content: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar li {
+    margin-bottom: 10px;
+  }
 }
