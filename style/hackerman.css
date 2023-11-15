@@ -404,16 +404,28 @@ label.control-checkbox input {
 
 /* Custom CSS for the page layout */
 
-#headings, #type, #buttons, #links, #forms {
+.container-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+  grid-gap: 20px; /* Adjust the gap between grid items */
+  padding: 20px; /* Padding around the grid */
+}
+
+#headings, #type, #buttons, #links, #forms, #footers, #content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
 }
 
 #headings h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
+
 
 section {
   border-bottom: #0f0 solid 1px;
@@ -425,8 +437,21 @@ section {
   flex-direction: column;
 }
 
+
 #cards {
-  width: 400px;
+  display: flex;
+  justify-content: space-around; /* Adjusts the spacing between cards */
+  align-items: start; /* Aligns items at the start of the container */
+  flex-wrap: wrap; /* Allows cards to wrap onto the next line if needed */
+}
+
+.card {
+  height: auto;
+  width: 400;
+}
+
+.card h6 {
+  font-size: 20px;
 }
 
 #regular::before {
@@ -435,7 +460,11 @@ section {
 
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  .container-main {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+  }
+  
   .navbar ul {
     flex-direction: column;
   }
