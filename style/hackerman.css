@@ -1,6 +1,13 @@
 :root {
   --background-color: #000;
   --foreground-color: rgb(20, 223, 20);
+  --button-color: #0f0; /* Regular button color */
+  --success-color-start: #4CAF50; /* Start color for success gradient */
+  --success-color-end: #FFEB3B; /* End color for success gradient */
+  --danger-color-start: #F44336; /* Start color for danger gradient */
+  --danger-color-end: #000000; /* End color for danger gradient */
+  --heading-color: var(--foreground-color);
+  --paragraph-color: #0f6e0d;
   --font-family: 'Ubuntu Mono', monospace;
   --font-size: 16px;
   --line-height: 1.5;
@@ -100,6 +107,7 @@ abbr:hover {
 code {
   font-family: 'Inconsolata', monospace;
   font-size: 0.9em;
+  margin: 10px;
 }
 
 a {
@@ -135,31 +143,26 @@ button.regular {
   background-color: var(--foreground-color);
 }
 
-/* button.success, button.danger {
-  background-size: 200% 100%;
-  animation: moveGradient 2s linear infinite;
-} */
-
 /* Danger Button */
 button.danger {
   background-image: repeating-linear-gradient(
     45deg,
-    #F44336,
-    #F44336 10px,
-    #000000 10px,
-    #000000 20px
+    var(--danger-color-start),
+    var(--danger-color-start) 10px,
+    var(--danger-color-end) 10px,
+    var(--danger-color-end) 20px
   );
-  color: white;
+  color: #fff;
 }
 
 /* Success Button */
 button.success {
   background-image: repeating-linear-gradient(
     45deg,
-    #4CAF50,
-    #4CAF50 10px,
-    #FFEB3B 10px,
-    #FFEB3B 20px
+    var(--success-color-start),
+    var(--success-color-start) 10px,
+    var(--success-color-end) 10px,
+    var(--success-color-end) 20px
   );
 }
 
@@ -406,12 +409,12 @@ label.control-checkbox input {
 
 .container-main {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+  grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
   grid-gap: 20px; /* Adjust the gap between grid items */
   padding: 20px; /* Padding around the grid */
 }
 
-#headings, #type, #buttons, #links, #forms, #footers, #content {
+#headings, #type, #buttons, #links, #forms, #footers, #content, #navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -458,6 +461,46 @@ section {
   content: none;
 }
 
+.row-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#form-container, #code-display {
+  flex-basis: 48%; /* Adjust the width as needed */
+  text-align: center;
+}
+
+#code-display h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#colors {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.color-grid > div {
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+#footers ul{
+  list-style-type: none;
+
+}
 
 /* Responsive Design */
 @media (max-width: 900px) {

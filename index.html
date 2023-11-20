@@ -42,9 +42,7 @@
         <h6>H6 Heading</h6>
         <code>
           &lt;h1&gt;Headings&lt;/h1&gt; &lt;h1&gt;H1 Heading&lt;/h1&gt;
-          &lt;h2&gt;H2 Heading&lt;/h2&gt; &lt;h3&gt;H3 Heading&lt;/h3&gt;
-          &lt;h4&gt;H4 Heading&lt;/h4&gt; &lt;h5&gt;H5 Heading&lt;/h5&gt;
-          &lt;h6&gt;H6 Heading&lt;/h6&gt;
+          &lt;h2&gt;H2 Heading&lt;/h2&gt; &lt;h3&gt;H3 Heading...&lt;/h3&gt;
         </code>
       </section>
       <!-- --------------------------- -->
@@ -117,146 +115,93 @@
       <!-- Form Styles -->
       <section id="forms">
         <h1 id="Regular">Forms and controls</h1>
-        <form>
-          <label>
-            <span>Text:</span>
-            <input type="text" placeholder="What is your name?" />
-          </label>
-
-          <label>
-            <span>Email:</span>
-            <input type="email" placeholder="What is your email?" />
-          </label>
-
-          <label>
-            <span>Password:</span>
-            <input type="password" placeholder="What is your password?" />
-          </label>
-
-          <label>
-            <span>Your comments</span>
-            <textarea placeholder="Your comment"></textarea>
-          </label>
-
-          <!-- Switch with Click -->
-          <div>
-            <label id="switch-1" class="switch-1">
-              <input type="checkbox" />
-              <div>
-                <div></div>
-              </div>
-            </label>
-            <span>Unchecked</span>
-          </div>
-
-          <label id="switch-2" class="switch-2">
-            <input type="checkbox" checked="checked" />
-            <span>Checked</span>
-          </label>
-        </form>
-
-        <h3 id="Regular">Input and label</h3>
-        <pre>
-				<code>
-&lt;label&gt;
-&#x9;&lt;span&gt;Text:&lt;/span&gt;
-&#x9;&lt;input type=&quot;text&quot; placeholder=&quot;What is your name?&quot;&gt;
-&lt;/label&gt;
-				</code>
-			</pre>
-
-        <h3 id="Regular">Checkbox and label</h3>
-        <pre>
-				<code>
-&lt;label class=&quot;control-checkbox&quot;&gt;Checked
-&#x9;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;
-&#x9;&lt;span&gt;&lt;/span&gt;
-&lt;/label&gt;
-				</code>
-						</pre>
-      </section>
+        <div class="row-container">
+            <!-- Form Container -->
+            <div id="form-container">
+                <form>
+                    <label>
+                        <span>Text:</span>
+                        <input type="text" placeholder="What is your SSN/SIN?" />
+                    </label>
+    
+                    <label>
+                        <span>Email:</span>
+                        <input type="email" placeholder="What is your email?" />
+                    </label>
+    
+                    <label>
+                        <span>Password:</span>
+                        <input type="password" placeholder="What is your password?" />
+                    </label>
+    
+                    <label>
+                        <span>Your comments</span>
+                        <textarea placeholder="Ready to get hacked?"></textarea>
+                    </label>
+    
+                    <!-- Switch with Click -->
+                    <label id="switch-1" class="switch-1">
+                        <input type="checkbox" />
+                        <span>Unchecked</span>
+                    </label>
+    
+                    <label id="switch-2" class="switch-2">
+                        <input type="checkbox" checked="checked" />
+                        <span>Checked</span>
+                    </label>
+                </form>
+            </div>
+    
+            <!-- Code Display Container -->
+            <div id="code-display">
+                <h3 id="Regular">Input and label</h3>
+                
+                    <code>
+                        &lt;label&gt;
+                        &#x9;&lt;span&gt;Text:&lt;/span&gt;
+                        &#x9;&lt;input type=&quot;text&quot; placeholder=&quot;What is your name?&quot;&gt;
+                        &lt;/label&gt;
+                    </code>
+              
+    
+                <h3 id="Regular">Checkbox and label</h3>
+              
+                    <code>
+                        &lt;label class=&quot;control-checkbox&quot;&gt;Checked
+                        &#x9;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;
+                        &#x9;&lt;span&gt;&lt;/span&gt;
+                        &lt;/label&gt;
+                    </code>
+            
+            </div>
+        </div>
+    </section>
 
       <!-- --------------------------- -->
       <!-- Colors -->
       <section id="colors">
         <h1 id="Regular">Colors</h1>
         <div class="color-grid">
-          <div style="background-color: var(--color-background)">
-            --color-background
+          <div style="background-color: var(--background-color)">
+            Background Color
           </div>
-          <div
-            style="
-              background-color: var(--color-foreground);
-              color: var(--color-background);
-            "
-          >
-            --color-foreground
+          <div style="background-color: var(--foreground-color)">
+            Foreground Color
           </div>
-          <div
-            style="
-              background-color: var(--color-dark);
-              color: var(--color-background);
-            "
-          >
-            --color-dark
+          <div style="background-color: var(--button-color)">
+            Button Color
           </div>
-
-          <div style="background-color: var(--color-light)">--color-light</div>
-
-          <div style="background-color: var(--color-md-light)">
-            --color-md-light
+          <div style="background-image: linear-gradient(45deg, var(--success-color-start), var(--success-color-end))">
+            Success Gradient
           </div>
-
-          <div
-            style="
-              background-color: var(--color-dark);
-              color: var(--color-background);
-            "
-          >
-            --color-md-dark
+          <div style="background-image: linear-gradient(45deg, var(--danger-color-start), var(--danger-color-end))">
+            Danger Gradient
           </div>
-
-          <div
-            style="
-              background-color: var(--color-primary);
-              color: var(--color-background);
-            "
-          >
-            --color-primary
+          <div style="background-color: var(--heading-color)">
+            Heading Color
           </div>
-
-          <div
-            style="
-              background-color: var(--color-info);
-              color: var(--color-background);
-            "
-          >
-            --color-info
-          </div>
-
-          <div
-            style="
-              background-color: var(--color-success);
-              color: var(--color-background);
-            "
-          >
-            --color-success
-          </div>
-
-          <div
-            style="
-              background-color: var(--color-danger);
-              color: var(--color-background);
-            "
-          >
-            --color-danger
-          </div>
-
-          <div style="background-color: var(--color-callout)">
-            --color-callout
-          </div>
-          <div style="background-color: var(--color-lightest)">
-            --color-lightest
+          <div style="background-color: var(--paragraph-color)">
+            Paragraph Color
           </div>
         </div>
       </section>
@@ -267,9 +212,7 @@
       <section id="navbar">
         <h1 id="Regular">Navbar</h1>
 
-        <h2 id="Regular">Navbar 1</h2>
         <p>A navbar with all elements on the left.</p>
-        <p>Use a single child under <code>div.navbar</code>.</p>
 
         <div class="navbar">
           <ul>
@@ -357,32 +300,29 @@
             <li><a>Item 3</a></li>
           </ul>
         </div>
-      </div>
-    </section>
-    
-    <section id="content">
-    <div class="page-footer">
-      <ul>
-        <li><h3>Content</h3></li>
-        <li><a href="#colors">Colors</a></li>
-        <li><a href="#navbar">Navbar</a></li>
-        <li><a href="#headings">Headings</a></li>
-        <li><a href="#type">Type</a></li>
-        <li><a href="#forms">forms</a></li>
-      </ul>
-
-      <ul>
-        <li><h3>Resources</h3></li>
-        <li><a href="">CSS Tricks</a></li>
-        <li><a href="">CSS Tricks</a></li>
-      </ul>
-
-      <ul>
-        <li><h3>Contact</h3></li>
-        <li><a href="https://github.com/soggybag/frmwrk-css">GitHub</a></li>
-      </ul>
+      </section>
+      
+      <section id="content">
+        <div class="page-footer">
+          <h3>Content</h3>
+          <ul>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#navbar">Navbar</a></li>
+            <li><a href="#headings">Headings</a></li>
+            <li><a href="#type">Type</a></li>
+            <li><a href="#forms">forms</a></li>
+          </ul>
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="">CSS Tricks</a></li>
+            <li><a href="">CSS Tricks</a></li>
+          </ul>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="https://github.com/soggybag/frmwrk-css">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
     </div>
-    <section>
-
   </body>
 </html>
